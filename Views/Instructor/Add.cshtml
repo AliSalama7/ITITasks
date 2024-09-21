@@ -1,0 +1,44 @@
+﻿@model DeptAndCourseListsViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+<h1>Add</h1>
+<form method="post" action="/Instructor/SaveAdd">
+    <div>
+        <label>Name</label>
+        <input name="Name" id="Name" type="text" class="form form-control" />
+    </div>
+    <div>
+        <label>Image</label>
+        <input name="ImageUrl" id="ImageUrl" type="text" class="form form-control" />
+    </div>
+    <div>
+        <label>Salary</label>
+        <input name="Salary" id="Salary" type="text" class="form form-control" />
+    </div>
+    <div>
+        <label>Address</label>
+        <input name="Address" id="Address" type="text" class="form form-control" />
+    </div>
+    <div>
+        <label>Department</label>
+        <select id="dept_id" name="dept_id" class="form form-control">
+            @foreach(var deptItem in Model.Departments)
+            {
+                <option value="@deptItem.Id">@deptItem.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Course</label>
+        <select id="course_id" name="course_id" class="form form-control">
+            @foreach (var crsItem in Model.Courses)
+            {
+                <option value="@crsItem.Id">@crsItem.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+    <input type="submit" value="Create" class="btn btn-primary  " />
+    </div>
+</form>

@@ -1,0 +1,43 @@
+﻿@model CoursewithDeptListViewModel
+@{
+    ViewData["Title"] = "Course Form";
+    SelectList Depts = new SelectList(Model.Departments, "Id" , "Name");
+}
+<h1>@(Model.Id > 0 ? "Edit" : "Create" ) Course</h1>
+<form asp-action="@(Model.Id > 0 ? "SaveEdit" : "SaveAdd")" asp-route-id="@Model.Id">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form form-control" maxlength="20" data-val-unique-name="@((Model.Id > 0) ? "false" : "true") />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Degree"></label>
+        <input asp-for="Degree" class="form form-control" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="MinDegree"></label>
+        <input asp-for="MinDegree" class="form form-control" />
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+
+    </div>
+    <div>
+        <label asp-for="Hours"></label>
+        <input asp-for="Hours" class="form form-control" />
+        <span asp-validation-for="Hours" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Departments"></label>
+            <select asp-for="dept_id" asp-items="Depts" class="form form-control">
+                <option value="null">--- Select Department ---</option>
+            </select>
+        <span asp-validation-for="dept_id" class="text-danger"></span>
+            </div>
+    <button type="submit" class="btn btn-primary mt-4">
+        <i class="bi bi-check"></i>
+        Save
+    </button>
+</form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

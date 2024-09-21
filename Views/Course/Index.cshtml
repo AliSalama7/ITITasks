@@ -1,0 +1,52 @@
+﻿@* @model List<Course>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_MyLayout";
+}
+<h1>Courses</h1>
+<a asp-action="Add"  class="btn btn-primary">New</a>
+<form asp-action="Index">
+    <div class="form-action no-color">
+        <p>
+            Find By Name :  <input name="searchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-secondary"/>
+            <a asp-action="Index">Back To List</a>
+        </p>
+    </div>
+</form>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Degree</th>
+        <th>MinDegree</th>
+        <th>Hours</th>
+        <th>Department</th>
+        <th>Instructors</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Degree</td>
+            <td>@item.MinDegree</td>
+            <td>@item.Hours</td>
+            <td>@item.Department?.Name</td>
+            <td>
+                <ul>
+                    @foreach(var ins in item.Instructors)
+                    {
+                        <li>@ins.Name</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+                <a asp-action="ShowCourseResults" asp-route-id="@item.Id">CourseResults</a>
+            </td>
+        </tr>
+    }
+</table> *@

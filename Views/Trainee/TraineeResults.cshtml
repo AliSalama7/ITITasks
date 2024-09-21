@@ -1,0 +1,22 @@
+﻿@model TraineeResultViewModel
+
+@{
+    ViewData["Title"] = $"{Model.TraineeName} Reslts ";
+}
+
+<h1>@Model.TraineeName Results</h1>
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>Course</td>
+        <td>Degree</td>
+    </tr>
+    @for (int i = 0; i < Model.CoursesNames.Count; i++)
+    {
+        <tr style="color : @Model.Colors[i]">
+            <td>@Model.CoursesNames[i]</td>
+            <td>@Model.Degrees[i]</td>
+        </tr>
+    }
+</table>
+
+

@@ -1,0 +1,19 @@
+﻿@model CrsResultViewModel
+
+@{
+    ViewData["Title"] = $"{Model.CourseName} Results";
+}
+<h1>@Model.CourseName  Results</h1>
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>Name</td>
+        <td>Degree</td>
+    </tr>
+    @for (int i = 0; i < Model.TraineesNames.Count; i++)
+    {
+        <tr style="color : @Model.Colors[i]">
+            <td>@Model.TraineesNames[i]</td>
+            <td>@Model.Degrees[i]</td>
+        </tr>
+    }
+</table>
