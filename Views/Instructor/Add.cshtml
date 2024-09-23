@@ -22,7 +22,7 @@
     </div>
     <div>
         <label>Department</label>
-        <select id="dept_id" name="dept_id" class="form form-control">
+        <select id="dept_id" name="dept_id"  class="form form-control" onchange="GetCourses()">
             @foreach(var deptItem in Model.Departments)
             {
                 <option value="@deptItem.Id">@deptItem.Name</option>
@@ -31,14 +31,27 @@
     </div>
     <div>
         <label>Course</label>
-        <select id="course_id" name="course_id" class="form form-control">
-            @foreach (var crsItem in Model.Courses)
-            {
-                <option value="@crsItem.Id">@crsItem.Name</option>
-            }
+        <select id="courses" name="courses" class="form form-control">
         </select>
     </div>
     <div>
     <input type="submit" value="Create" class="btn btn-primary  " />
     </div>
 </form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function GetCourses(){
+        var deptId = document.getElementById("dept_id").value;
+        var CoursesElement = document.getElementById("courses");
+       CoursesElement.innerHTML = "";
+
+        $.ajax({
+            url: "/Instructor/GetCoursesByDeptId?deptid=" + deptId,
+            success: function (result) {
+                for (let crs of result) {
+                    CoursesElement.innerHTML += "<option value='" + crs.id + "'>" + crs.name + "</option>";
+                }
+            }
+        });
+    }
+</script>

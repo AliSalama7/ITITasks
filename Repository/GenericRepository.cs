@@ -25,6 +25,12 @@ namespace WebApplication1.Repository
             return query.Where(match).ToList();
         }
 
+        public List<T> Find(Expression<Func<T, bool>> match)
+        {
+            IQueryable<T> query = context.Set<T>();
+            return query.Where(match).ToList();
+        }
+
         public void Save()
         {
             context.SaveChanges();

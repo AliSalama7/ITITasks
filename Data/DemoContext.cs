@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
 namespace WebApplication1.Data
 {
-    public class DemoContext : DbContext
+    public class DemoContext : IdentityDbContext<ApplicationUser>
     {
         public DemoContext() : base()
         {
         }
         public DemoContext(DbContextOptions<DemoContext> options) : base(options) 
-        {
+        {   
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder options)
         //{

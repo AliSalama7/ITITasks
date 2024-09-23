@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.Repository;
 using WebApplication1.ViewModels;
@@ -19,6 +20,7 @@ namespace WebApplication1.Controllers
             this.crsResultRepository = crsResultRepository;
             this.traineeRepository = traineeRepository;
         }
+        [Authorize]
         public IActionResult Add()
         {
             CoursewithDeptListViewModel viewModel = new CoursewithDeptListViewModel();
@@ -31,6 +33,7 @@ namespace WebApplication1.Controllers
                 return Json(false);
             return Json(true);
         }
+        [Authorize]
         public IActionResult SaveAdd(CoursewithDeptListViewModel viewModel) 
         {
             if(!ModelState.IsValid)
@@ -50,6 +53,7 @@ namespace WebApplication1.Controllers
             courseRepository.Save();
             return RedirectToAction("Index", "Home");
         }
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var course = courseRepository.GetById(id);
@@ -66,6 +70,7 @@ namespace WebApplication1.Controllers
             };
             return View("CourseForm", viewModel);
         }
+        [Authorize]
         public IActionResult SaveEdit(int id,CoursewithDeptListViewModel viewModel) 
         {
             if (!ModelState.IsValid) 

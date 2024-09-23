@@ -31,6 +31,11 @@ namespace WebApplication1.Controllers
             viewModel.Departments = Departments;
             return View("Add" , viewModel);
         }
+        public IActionResult GetCoursesByDeptId(int deptId) 
+        {
+            var courses = courseRepository.Find(c => c.dept_id == deptId).ToList();
+            return Json(courses);
+        }
         [HttpPost]
         public IActionResult SaveAdd(Instructor newInstructor)
         {

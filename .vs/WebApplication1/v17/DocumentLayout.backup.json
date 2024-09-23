@@ -1,7 +1,19 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projects\\WebApplication1\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8F1785DB-8C39-4812-9D26-47EC98E09F3A}|WebApplication1.csproj|c:\\projects\\webapplication1\\views\\instructor\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F1785DB-8C39-4812-9D26-47EC98E09F3A}|WebApplication1.csproj|solutionrelative:views\\instructor\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Learning\\DeptEmps.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F1785DB-8C39-4812-9D26-47EC98E09F3A}|WebApplication1.csproj|c:\\projects\\webapplication1\\controllers\\instructorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F1785DB-8C39-4812-9D26-47EC98E09F3A}|WebApplication1.csproj|solutionrelative:controllers\\instructorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +50,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Projects\\WebApplication1\\Views\\Instructor\\Add.cshtml",
+              "RelativeDocumentMoniker": "Views\\Instructor\\Add.cshtml",
+              "ToolTip": "C:\\Projects\\WebApplication1\\Views\\Instructor\\Add.cshtml*",
+              "RelativeToolTip": "Views\\Instructor\\Add.cshtml*",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T09:24:36.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeptEmps.cshtml",
+              "DocumentMoniker": "C:\\Learning\\DeptEmps.cshtml",
+              "RelativeDocumentMoniker": "..\\..\\Learning\\DeptEmps.cshtml",
+              "ToolTip": "C:\\Learning\\DeptEmps.cshtml",
+              "RelativeToolTip": "..\\..\\Learning\\DeptEmps.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T09:25:38.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InstructorController.cs",
+              "DocumentMoniker": "C:\\Projects\\WebApplication1\\Controllers\\InstructorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InstructorController.cs",
+              "ToolTip": "C:\\Projects\\WebApplication1\\Controllers\\InstructorController.cs",
+              "RelativeToolTip": "Controllers\\InstructorController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowB8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T09:09:08.245Z",
+              "EditorCaption": ""
             }
           ]
         }

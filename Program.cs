@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Repository;
@@ -9,6 +10,7 @@ builder.Services.AddDbContext<DemoContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection"));
 });
+builder.Services.AddIdentity<ApplicationUser , IdentityRole>().AddEntityFrameworkStores<DemoContext>();
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
